@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>$emit 和 $on</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+   <div id="app">
+       <button @click="show">Click Me!</button>
+       <button @click="show2">Click Me2!</button>
+   </div>
+   <script>
+       new Vue ({
+           el : '#app',
+           data () {
+               return {
+                   msg: 'Welcome to visit:'
+               }
+           },
+           created () {
+               this.$on(['website','website2'],this.showwebsite)
+           },
+           methods: {
+            anothershow(e){
+                alert(e)
+            },
+            showwebsite(e){
+                console.log(this.msg, e)
+            },
+            show() {
+                this.$emit('website','https://www.liugezhou.online')
+            },
+            show2() {
+                this.$emit('website2','website2')
+            }
+           }
+       })
+   </script>
+  </body>
+</html>
