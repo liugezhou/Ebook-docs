@@ -1,0 +1,27 @@
+
+<html>
+    <head>
+      <title>filter用法</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            {{message | lower}}
+        </div>
+        <script>
+          new Vue({
+              el :'#root',
+              filters:{
+                  lower(value) {
+                      return value.toLowerCase()
+                  }
+              },
+              data() {
+                  return {
+                      message :'Hello World!'
+                  }
+              }
+          })
+        </script>
+    </body> 
+</html> 

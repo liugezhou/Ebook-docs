@@ -102,5 +102,29 @@
 
 #### 3.4 Vue extend用法
 ```
+  const component = Vue.extend({
+                template :'<div>{{msg}}</div>',
+                props: {
+                    msg : {
+                        type:String,
+                        default: 'Hello World!'
+                    }
+                }
+            })
+            Vue.component('Test',component)
+            new Vue({
+                el: '#root',
+                data() {
+                    return {
+                        messge:'Component'
+                    }
+                } 
+            })
+```
+
+#### 3.5 Vue.extend 进阶用法
+```
 
 ```
+
+#### 3.6 Vue.use用法
